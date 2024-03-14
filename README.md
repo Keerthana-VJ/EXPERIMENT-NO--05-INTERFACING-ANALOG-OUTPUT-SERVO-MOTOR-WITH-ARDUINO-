@@ -1,8 +1,8 @@
-###  DATE: 
+###  DATE: 14.03.2024
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+###  NAME: KEERTHANA.V
+###  ROLL NO : 212223220045
+###  DEPARTMENT: INFORMATION TECHNOLOGY
 
 
 # EXPERIMENT NO 05 INTERFACING ANALOG OUTPUT SERVO MOTOR WITH ARDUINO
@@ -31,35 +31,22 @@ Servo motors are used for angular positioning, such as in radio control airplane
 
 
 
-#### Figure-01 SERVO MOTOR SPLIT VIEW 
+#### Figure-01 SERVO MOTOR SPLIT VIEW :
 Control 
 An external controller (such as the Arduino) tells the servo where to go with a signal know as pulse proportional modulation (PPM) or pulse code modulation (which is often confused with pulse width modulation, PWM). PWM uses 1 to 2ms out of a 20ms time period to encode its information.
  
  
  ![image](https://user-images.githubusercontent.com/36288975/163544482-3027136f-7135-4f3d-a23f-8dc2fe04194d.png)
 
-### Figure-02 SERVO MOTOR PINS
+### Figure-02 SERVO MOTOR PINS :
 
  ![image](https://user-images.githubusercontent.com/36288975/163544513-ca497421-e6ba-4f91-871f-5cfba77f22a8.png)
 
 
-### Figure-03 SERVO MOTOR OVERVIEW 
-
- 
-
-
- 
-
-
-
-
-
-CIRCUIT DIAGRAM
- 
+### Figure-03 SERVO MOTOR OVERVIEW  
  
  ![image](https://user-images.githubusercontent.com/36288975/163544618-6eb8a7b5-7f1a-428a-8d9f-fd899b145efb.png)
 
-### FIGURE 04 CIRCUIT DIAGRAM
 
 ### PROCEDURE:
 1.	Connect the circuit as per the circuit diagram 
@@ -74,12 +61,55 @@ CIRCUIT DIAGRAM
 
 
 ### PROGRAM :
- 
+ ```
+#include<Servo.h>
+Servo myServo;
+
+  int pos =0;
+void setup()
+{
+  myServo.attach(9);
+  Serial.begin(9600);
+    
+}
+
+void loop()
+{
+  for (pos=0;pos<=180;pos+=1)
+  {myServo.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+       //delay(500);
+  
+  }
+  
+  for (pos=0;pos>=180;pos-=1)
+  {myServo.write(pos);
+   delay(20);
+   //Serial.print("Angle=");
+   Serial.println(pos);
+       //delay(500);
+  }
+  
+  
+}
+```
+## OUTPUT :
+## CIRCUIT DIAGRAM :
+
+<img width="663" alt="EX-05(1)" src="https://github.com/Keerthana-VJ/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/149347704/5f585f03-f8cc-4a6b-98d9-4f98d2847302">
+
+## SCHEMATIC DIAGRAM :
+
+
+<img width="454" alt="EX-05(2)" src="https://github.com/Keerthana-VJ/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/149347704/9bc1e188-81b3-4d32-b4b4-3a5ac27d65e3">
+
+## GRAPH :
 
 
 
-
-
+<img width="573" alt="EX-05(3)" src="https://github.com/Keerthana-VJ/EXPERIMENT-NO--05-INTERFACING-ANALOG-OUTPUT-SERVO-MOTOR-WITH-ARDUINO-/assets/149347704/b4f0586d-e46b-4fba-bc50-71648c00e8d4">
 
 
 
